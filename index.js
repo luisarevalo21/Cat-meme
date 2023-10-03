@@ -1,5 +1,5 @@
 import { catsData, catEmotions, catCategories } from "./data.js";
-import ACCESS_KEY from "./js/test.js";
+import ACCESS_KEY from "./js/config.js";
 
 const emotionRadios = document.getElementById("emotion-radios");
 const getImageBtn = document.getElementById("get-image-btn");
@@ -23,7 +23,7 @@ async function fetchRandomCat(emotion) {
     method: "GET",
     headers: {
       // Authorization: `Client-ID ${process.env.VITE_MY_VAR}`,
-      Authorization: `Client-ID ${process.env.ACCESS_KEY}`,
+      Authorization: `Client-ID ${ACCESS_KEY}`,
     },
   });
   const data = await res.json();
